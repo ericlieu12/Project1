@@ -15,5 +15,10 @@ namespace Project1.Data
     }
         public DbSet<Student> Student { get; set; }
         public DbSet<Usadaders> Usadaders { get; set; }
+
+        public DbSet<Store> Stores { get; set; }
+
+        public DbSet<FoodItem> FoodItems { get; set; }
+
     }
 }
