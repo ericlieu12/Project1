@@ -11,7 +11,9 @@ namespace Project1.Data
         public ApplicationDbContext(DbContextOptions options, IOptions<OperationalStoreOptions> operationalStoreOptions)
             : base(options, operationalStoreOptions)
         {
-
-        }
+            
+    }
+        public DbSet<Student> Student { get; set; }
+        public DbSet<Usadaders> Usadaders { get; set; }
     }
 }
