@@ -5,10 +5,11 @@ import { Home } from './components/Home';
 import { FetchData } from './components/FetchData';
 import { Counter } from './components/Counter';
 import { Budget } from './components/dashboard/budget';
+import { Dashboard } from './pages/Dashboard';
 import AuthorizeRoute from './components/api-authorization/AuthorizeRoute';
 import ApiAuthorizationRoutes from './components/api-authorization/ApiAuthorizationRoutes';
 import { ApplicationPaths } from './components/api-authorization/ApiAuthorizationConstants';
-
+import { Register } from './components/register';
 import './custom.css'
 
 export default class App extends Component {
@@ -17,9 +18,9 @@ export default class App extends Component {
   render () {
     return (
       <Layout>
-        <Route exact path='/' component={Home} />
+            <Route exact path='/' component={Register} />
             <Route path='/counter' component={Counter} />
-            <Route path='/Budget' component={Budget} />
+            <Route path='/Budget' component={Dashboard} />
 
         <AuthorizeRoute path='/fetch-data' component={FetchData} />
         <Route path={ApplicationPaths.ApiAuthorizationPrefix} component={ApiAuthorizationRoutes} />

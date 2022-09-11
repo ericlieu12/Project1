@@ -31,5 +31,16 @@ namespace Project1.Controllers
             })
             .ToArray();
         }
+        //list of 10 items
+        //spinach
+        //brocolli
+        //lettuce
+
+        //make call to API, get nutrition back
+
+        //class
+            //vitamin C percent RDA int 78
+
+        //make an object to hold the results
     }
 }

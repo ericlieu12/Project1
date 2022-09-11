@@ -18,41 +18,59 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 const products = [
   {
     id: uuid(),
-    name: 'Dropbox',
+    name: 'Bag Of Spinach',
     imageUrl: '/static/images/products/product_1.png',
-    updatedAt: subHours(Date.now(), 2)
+        updatedAt: '9.25'
   },
   {
     id: uuid(),
-    name: 'Medium Corporation',
+    name: '14 Cups of Broccoli',
     imageUrl: '/static/images/products/product_2.png',
-    updatedAt: subHours(Date.now(), 2)
+      updatedAt: '9.25'
   },
   {
     id: uuid(),
-    name: 'Slack',
+    name: '72 Cucumbers',
     imageUrl: '/static/images/products/product_3.png',
-    updatedAt: subHours(Date.now(), 3)
+      updatedAt: '9.25'
   },
   {
     id: uuid(),
-    name: 'Lyft',
+    name: '98 Zucchinis',
     imageUrl: '/static/images/products/product_4.png',
-    updatedAt: subHours(Date.now(), 5)
+      updatedAt: '9.25'
   },
   {
     id: uuid(),
-    name: 'GitHub',
+    name: 'Pizza',
     imageUrl: '/static/images/products/product_5.png',
-    updatedAt: subHours(Date.now(), 9)
-  }
+    updatedAt: '9.25'
+    },
+    {
+        id: uuid(),
+        name: 'Pizza',
+        imageUrl: '/static/images/products/product_5.png',
+        updatedAt: '9.25'
+    },
+    {
+        id: uuid(),
+        name: 'Pizza',
+        imageUrl: '/static/images/products/product_5.png',
+        updatedAt: '9.25'
+    },
+    {
+        id: uuid(),
+        name: 'Pizza',
+        imageUrl: '/static/images/products/product_5.png',
+        updatedAt: '9.25'
+    }
 ];
 
 export const LatestProducts = (props) => (
-  <Card {...props}>
+    <Card {...props} sx={{ height: 520 }} style={{ 'overflow-y': 'scroll' }}>
     <CardHeader
       subtitle={`${products.length} in total`}
-      title="Latest Products"
+      title="Items"
     />
     <Divider />
     <List>
@@ -61,19 +79,10 @@ export const LatestProducts = (props) => (
           divider={i < products.length - 1}
           key={product.id}
         >
-          <ListItemAvatar>
-            <img
-              alt={product.name}
-              src={product.imageUrl}
-              style={{
-                height: 48,
-                width: 48
-              }}
-            />
-          </ListItemAvatar>
+         
           <ListItemText
             primary={product.name}
-            secondary={`Updated ${formatDistanceToNow(product.updatedAt)}`}
+                  secondary={product.updatedAt}
           />
           <IconButton
             edge="end"

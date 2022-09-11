@@ -12,3 +12,16 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+input {
+    height: 800px;
+}
+#special {
+    top: 0;
+    left: 0;
+    position: absolute
+}
+body {
+    font-family: 'Roboto';
+  /* Hide horizontal scrollbar */
+    background-color: antiquewhite
+}

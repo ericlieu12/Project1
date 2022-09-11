@@ -1,8 +1,7 @@
 import { Avatar, Box, Card, CardContent, Grid, Typography } from '@mui/material';
 import MoneyIcon from '@mui/icons-material/Money';
-
-export const Budget = (props) => (
-
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney'
+export const CostOfGoods = (props) => (
   <Card
     sx={{ height: '100%' }}
     {...props}
@@ -19,9 +18,8 @@ export const Budget = (props) => (
             gutterBottom
                         variant="overline"
                         sx={{ fontWeight: 'bold' }}
-
           >
-            BUDGET 
+            COST
           </Typography>
           <Typography
             color="textPrimary"
@@ -34,12 +32,12 @@ export const Budget = (props) => (
         <Grid item>
           <Avatar
             sx={{
-              backgroundColor: 'error.main',
+                            backgroundColor: 'secondary.main',
               height: 56,
               width: 56
             }}
           >
-            <MoneyIcon />
+                        <AttachMoneyIcon />
           </Avatar>
         </Grid>
       </Grid>

@@ -8,21 +8,24 @@ export const TotalCustomers = (props) => (
       <Grid
         container
         spacing={3}
-        sx={{ justifyContent: 'space-between' }}
+                sx={{ justifyContent: 'space-between' }}
+
       >
         <Grid item>
           <Typography
             color="textSecondary"
             gutterBottom
-            variant="overline"
+                        variant="overline"
+                        sx={{ fontWeight: 'bold' }}
           >
-            TOTAL CUSTOMERS
+            People to Feed
           </Typography>
           <Typography
             color="textPrimary"
-            variant="h4"
+                        variant="h4"
+                        sx={{ fontWeight: 'bold' }}
           >
-            1,6k
+                        {(props.money ?? '0')}
           </Typography>
         </Grid>
         <Grid item>
@@ -44,21 +47,7 @@ export const TotalCustomers = (props) => (
           pt: 2
         }}
       >
-        <ArrowUpwardIcon color="success" />
-        <Typography
-          variant="body2"
-          sx={{
-            mr: 1
-          }}
-        >
-          16%
-        </Typography>
-        <Typography
-          color="textSecondary"
-          variant="caption"
-        >
-          Since last month
-        </Typography>
+      
       </Box>
     </CardContent>
   </Card>
