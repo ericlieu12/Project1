@@ -1,5 +1,8 @@
 import { formatDistanceToNow, subHours } from 'date-fns';
 import { v4 as uuid } from 'uuid';
+import { Typography } from '@mui/material';
+import LocalDiningIcon from '@mui/icons-material/LocalDining';
+import DinnerDiningIcon from '@mui/icons-material/DinnerDining';
 import {
   Box,
   Button,
@@ -65,34 +68,78 @@ const products = [
         updatedAt: '9.25'
     }
 ];
-
 export const LatestProducts = (props) => (
-    <Card {...props} sx={{ height: 520 }} style={{ 'overflow-y': 'scroll' }}>
-    <CardHeader
-      subtitle={`${products.length} in total`}
-      title="Items"
+    <Card {...props} sx={{ height: 500, 'backgroundColor': '#E8EDDF' }} style={{ 'overflow-y': 'scroll'}}>
+        <CardHeader sx={{ backgroundColor: '#2B2D42'}}
+            subtitle={`${products.length} in total`}
+            title={
+                <Typography variant="h5" component="h2" sx={{ fontWeight: 'bold', color: "white"}}>
+            ITEMS (Walmart 1425 NE 163rd St)
+                </Typography>
+            }
     />
     <Divider />
     <List>
-      {props.products.map((product, i) => (
-        <ListItem
-          divider={i < products.length - 1}
-          key={product.id}
-        >
+            {props.products.map((product, i) => {
+             
+                if (i%2 == 0) {
+                 
+                    return (
+                        <ListItem
+                            divider={i < products.length - 1}
+                            key={product.id}
+                            
+                        >
+
+                            <ListItemAvatar>
+                                <LocalDiningIcon style={{ color: "#2B2D42" }} />
+                            </ListItemAvatar>
+                            <ListItemText
+
+                                disableTypography
+                                primary={<Typography type="body2" sx={{ fontWeight: 'bold', color: "#2B2D42" }}>{product.name}</Typography>}
+                                secondary={product.updatedAt}
+
+                            />
+                            <IconButton
+                                edge="end"
+                                size="small"
+                            >
+                                <MoreVertIcon />
+                            </IconButton>
+                        </ListItem>
+                    );
+                }
          
-          <ListItemText
-            primary={product.name}
-                  secondary={product.updatedAt}
-          />
-          <IconButton
-            edge="end"
-            size="small"
-          >
-            <MoreVertIcon />
-          </IconButton>
-        </ListItem>
-      ))}
-    </List>
+                return (
+                    <ListItem
+                        divider={i < products.length - 1}
+                        key={product.id}
+                    >
+
+                        <ListItemAvatar>
+                            <DinnerDiningIcon style={{ color: "#2B2D42" }} />
+                        </ListItemAvatar>
+                        <ListItemText
+
+                            disableTypography
+                            primary={<Typography type="body2" sx={{ fontWeight: 'bold', color: "#2B2D42" }}>{product.name}</Typography>}
+                            secondary={product.updatedAt}
+
+                        />
+                        <IconButton
+                            edge="end"
+                            size="small"
+                        >
+                            <MoreVertIcon />
+                        </IconButton>
+                    </ListItem>
+                );
+      
+                }  )
+             }
+        </List>
+
     <Divider />
     <Box
       sx={{

@@ -22,6 +22,17 @@ input {
 }
 body {
     font-family: 'Roboto';
-  /* Hide horizontal scrollbar */
-    background-color: antiquewhite
+    /* Hide horizontal scrollbar */
+    background-color: #CFDBD5; scrollbar-width: none;
+}
+.container::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+}
+::-webkit-scrollbar {
+    width: 0; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
 }

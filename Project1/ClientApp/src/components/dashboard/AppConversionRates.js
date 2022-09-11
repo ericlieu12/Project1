@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
 import ReactApexChart from 'react-apexcharts';
 // @mui
-import { Box, Card, CardHeader } from '@mui/material';
+import { Box, Card, CardHeader, Typography } from '@mui/material';
 // utils
 import { fNumber } from './formatNumber';
 // components
@@ -36,7 +36,7 @@ export default function AppConversionRates({ title, subheader, chartData, ...oth
       },
     },
     plotOptions: {
-      bar: { horizontal: true, barHeight: '30px', borderRadius: 2 },
+      bar: { horizontal: true, barHeight: '45px', borderRadius: 5 },
     },
     xaxis: {
       categories: chartLabels,
@@ -44,8 +44,15 @@ export default function AppConversionRates({ title, subheader, chartData, ...oth
   });
 
   return (
-    <Card {...other}>
-      <CardHeader title={title} subheader={subheader} />
+      <Card sx={{ 'backgroundColor': "#E8EDDF" }} {...other}>
+          <CardHeader sx={{ backgroundColor: '#2B2D42' }}
+              subtitle={` in total`}
+              title={
+                  <Typography variant="h5" component="h2" sx={{ fontWeight: 'bold', color: "white" }}>
+                      VITAMINS/MINERALS
+                  </Typography>
+              }
+          />
 
       <Box sx={{ mx: 3 }} dir="ltr">
         <ReactApexChart type="bar" series={[{ data: chartSeries }]} options={chartOptions}  />

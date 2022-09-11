@@ -80,7 +80,7 @@ export default function BaseOptionChart() {
   return {
     // Colors
     colors: [
-      theme.palette.primary.main,
+     "#3C91E6",
     
     ],
 
@@ -89,8 +89,10 @@ export default function BaseOptionChart() {
       toolbar: { show: false },
       zoom: { enabled: false },
       // animations: { enabled: false },
-      foreColor: theme.palette.text.disabled,
-      fontFamily: theme.typography.fontFamily
+        foreColor: '#2B2D42',
+        fontWeight: 'bold',
+        fontFamily: theme.typography.fontFamily,
+    
     },
 
     // States
@@ -116,7 +118,7 @@ export default function BaseOptionChart() {
         type: 'vertical',
         shadeIntensity: 0,
         opacityFrom: 0.4,
-        opacityTo: 0,
+        opacityTo: 1,
         stops: [0, 100]
       }
     },
@@ -140,7 +142,8 @@ export default function BaseOptionChart() {
     // Xaxis
     xaxis: {
       axisBorder: { show: false },
-      axisTicks: { show: false }
+        axisTicks: { show: false },
+      size: 45
     },
 
     // Markers
@@ -179,7 +182,8 @@ export default function BaseOptionChart() {
       // Bar
       bar: {
         columnWidth: '28%',
-        borderRadius: 4
+            borderRadius: 4
+        
       },
       // Pie + Donut
       pie: {

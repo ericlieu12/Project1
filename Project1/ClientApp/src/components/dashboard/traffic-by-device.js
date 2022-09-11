@@ -7,14 +7,15 @@ import TabletIcon from '@mui/icons-material/Tablet';
 
 export const TrafficByDevice = (props) => {
   const theme = useTheme();
-    console.log(props.hey)
+
   const data = {
     datasets: [
       {
         data: [63, 15, 22],
-        backgroundColor: ['#3F51B5', '#e53935', '#FB8C00'],
+            backgroundColor: ['#2B2D42', '#F5CB5C', '#3C91E6'],
+
         borderWidth: 8,
-        borderColor: '#FFFFFF',
+            borderColor: "#E8EDDF",
         hoverBorderColor: '#FFFFFF'
       }
     ],
@@ -31,42 +32,49 @@ export const TrafficByDevice = (props) => {
     maintainAspectRatio: false,
     responsive: true,
     tooltips: {
-      backgroundColor: theme.palette.background.paper,
-      bodyFontColor: theme.palette.text.secondary,
-      borderColor: theme.palette.divider,
+        backgroundColor: "#E8EDDF",
+        bodyFontColor: "#E8EDDF",
+        borderColor: "#E8EDDF",
       borderWidth: 1,
-      enabled: true,
-      footerFontColor: theme.palette.text.secondary,
+      enabled: false,
+        footerFontColor: "#E8EDDF",
       intersect: false,
       mode: 'index',
-      titleFontColor: theme.palette.text.primary
+        titleFontColor: "#E8EDDF",
     }
   };
 
   const devices = [
     {
       title: 'Carbs',
-      value: 63,
+          value: props.carb,
       icon: LaptopMacIcon,
-      color: '#3F51B5'
+          color: '#2B2D42'
     },
     {
       title: 'Fats',
-      value: 15,
+        value: props.fat,
       icon: TabletIcon,
-      color: '#E53935'
+        color: '#F5CB5C'
     },
     {
       title: 'Proteins',
-      value: 23,
+        value:  props.protein,
       icon: PhoneIcon,
-      color: '#FB8C00'
+        color: '#3C91E6'
     }
   ];
 
   return (
-      <Card {...props} sx={{height: 520}}>
-      <CardHeader title="Macronutrients" />
+      <Card {...props} sx={{ height: 500, backgroundColor: '#E8EDDF'}}>
+          <CardHeader sx={{ backgroundColor: '#2B2D42' }}
+             
+              title={
+                  <Typography  variant="h6" component="h2" sx={{ fontWeight: 'bold', color: "white" }}>
+                      MACRONUTRIENTS
+                  </Typography>
+              }
+          />
       <Divider />
       <CardContent>
         <Box
@@ -100,7 +108,7 @@ export const TrafficByDevice = (props) => {
                 textAlign: 'center'
               }}
             >
-              <Icon color="action" />
+          
               <Typography
                 color="textPrimary"
                 variant="body1"

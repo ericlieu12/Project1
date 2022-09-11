@@ -2,9 +2,10 @@ import { Avatar, Box, Card, CardContent, Grid, Typography } from '@mui/material'
 import MoneyIcon from '@mui/icons-material/Money';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney'
 import Favorite from '@mui/icons-material/Favorite'
+import CloseIcon from '@mui/icons-material/Close';
 export const Grade = (props) => (
   <Card
-    sx={{ height: '100%' }}
+        sx={{ height: '100%', 'backgroundColor': '#2B2D42', color: 'white' }}
     {...props}
   >
     <CardContent>
@@ -15,7 +16,7 @@ export const Grade = (props) => (
       >
         <Grid item>
           <Typography
-            color="textSecondary"
+                        color="white"
             gutterBottom
                         variant="overline"
                         sx={{ fontWeight: 'bold' }}
@@ -23,7 +24,7 @@ export const Grade = (props) => (
             HEALTH PERCENTAGE
           </Typography>
           <Typography
-            color="textPrimary"
+                        color="white"
                         variant="h4"
                         sx={{ fontWeight: 'bold' }}
           >
@@ -33,7 +34,7 @@ export const Grade = (props) => (
         <Grid item>
           <Avatar
             sx={{
-                            backgroundColor: 'info.main',
+                            backgroundColor: '#3C91E6',
               height: 56,
               width: 56
             }}
@@ -42,15 +43,29 @@ export const Grade = (props) => (
           </Avatar>
         </Grid>
       </Grid>
-      <Box
-        sx={{
-          pt: 2,
-          display: 'flex',
-          alignItems: 'center'
-        }}
-      >
-        
-      </Box>
+            <Box
+                sx={{
+                    alignItems: 'center',
+                    display: 'flex',
+                    pt: 2
+                }}
+            >
+                <CloseIcon color="error" />
+                <Typography
+                    variant="body2"
+                    sx={{
+                        mr: 1
+                    }}
+                >
+                    {props.money}%
+                </Typography>
+                <Typography
+                    color="white"
+                    variant="caption"
+                >
+                    health reached
+                </Typography>
+            </Box>
     </CardContent>
   </Card>
 );

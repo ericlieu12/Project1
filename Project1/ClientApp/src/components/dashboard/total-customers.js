@@ -1,9 +1,9 @@
 import { Avatar, Box, Card, CardContent, Grid, Typography } from '@mui/material';
-import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import CheckIcon from '@mui/icons-material/Check';
 import PeopleIcon from '@mui/icons-material/PeopleOutlined';
 
 export const TotalCustomers = (props) => (
-  <Card {...props}>
+    <Card sx={{ 'backgroundColor': '#2B2D42', color: 'white' }}{...props}>
     <CardContent>
       <Grid
         container
@@ -13,7 +13,7 @@ export const TotalCustomers = (props) => (
       >
         <Grid item>
           <Typography
-            color="textSecondary"
+                        color="white"
             gutterBottom
                         variant="overline"
                         sx={{ fontWeight: 'bold' }}
@@ -21,7 +21,7 @@ export const TotalCustomers = (props) => (
             People to Feed
           </Typography>
           <Typography
-            color="textPrimary"
+                        color="white"
                         variant="h4"
                         sx={{ fontWeight: 'bold' }}
           >
@@ -31,7 +31,7 @@ export const TotalCustomers = (props) => (
         <Grid item>
           <Avatar
             sx={{
-              backgroundColor: 'success.main',
+                            backgroundColor: '#788BFF',
               height: 56,
               width: 56
             }}
@@ -40,15 +40,29 @@ export const TotalCustomers = (props) => (
           </Avatar>
         </Grid>
       </Grid>
-      <Box
-        sx={{
-          alignItems: 'center',
-          display: 'flex',
-          pt: 2
-        }}
-      >
-      
-      </Box>
+            <Box
+                sx={{
+                    alignItems: 'center',
+                    display: 'flex',
+                    pt: 2
+                }}
+            >
+                <CheckIcon color="success" />
+                <Typography
+                    variant="body2"
+                    sx={{
+                        mr: 1
+                    }}
+                >
+                    100%
+                </Typography>
+                <Typography
+                    color="white"
+                    variant="caption"
+                >
+                    calories met
+                </Typography>
+            </Box>
     </CardContent>
   </Card>
 );

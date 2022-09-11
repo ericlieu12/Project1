@@ -33,37 +33,41 @@ export const Register = () => {
             justifyContent: 'center',
           display: 'flex',
             height: '100vh',
-         
+          
         }}
       >
-        <Container maxWidth="sm">
+              <Container maxWidth="sm" sx={{ backgroundColor: '#EDF1E4', borderRadius: 5, color: "black"}}>
      
             <Box sx={{ my: 3 }}>
               <Typography
-                color="textPrimary"
-                          variant="h4"
+                          color="black"
+                          variant="h6"
                           textAlign="center"
+                        
               >
-                Enter your budget
+                ENTER YOUR BUDGET
               </Typography>
          
             </Box>
             <TextField
-
+                  
                       fullWidth
                       inputRef={refContainer}
               label="Budget For the Week"
               margin="normal"
               name="password"
                 id="money"
-
+                      sx={{
+                          color: "white"}}
            
               variant="outlined"
             />
             <TextField
-             
+                     
               fullWidth
-              
+                      sx={{
+                          color: "white"
+                      }}
               label="How Many Mouths To Feed"
               margin="normal"
               name="password"
@@ -77,7 +81,11 @@ export const Register = () => {
           
             <Box sx={{ py: 2 }}>
               <Button
-                          color="primary"
+                          style={{
+                           
+                              backgroundColor: "#1C77C3",
+                         
+                          }}
 
                           fullWidth
                           size="large"
