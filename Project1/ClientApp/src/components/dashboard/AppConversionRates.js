@@ -23,16 +23,20 @@ export default function AppConversionRates({ title, subheader, chartData, ...oth
 
   const chartOptions = merge(BaseOptionChart(), {
     tooltip: {
-      marker: { show: false },
+          marker: { show: true },
+          yaxis: {
+              max: 100
+          },
       y: {
-        formatter: (seriesName) => fNumber(seriesName),
+          formatter: (seriesName) => fNumber(seriesName),
+          max: 100,
         title: {
           formatter: () => '',
         },
       },
     },
     plotOptions: {
-      bar: { horizontal: true, barHeight: '28%', borderRadius: 2 },
+      bar: { horizontal: true, barHeight: '30px', borderRadius: 2 },
     },
     xaxis: {
       categories: chartLabels,
@@ -44,7 +48,7 @@ export default function AppConversionRates({ title, subheader, chartData, ...oth
       <CardHeader title={title} subheader={subheader} />
 
       <Box sx={{ mx: 3 }} dir="ltr">
-        <ReactApexChart type="bar" series={[{ data: chartSeries }]} options={chartOptions} height={364} />
+        <ReactApexChart type="bar" series={[{ data: chartSeries }]} options={chartOptions}  />
       </Box>
     </Card>
   );

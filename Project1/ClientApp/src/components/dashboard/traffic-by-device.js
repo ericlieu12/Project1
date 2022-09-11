@@ -7,7 +7,7 @@ import TabletIcon from '@mui/icons-material/Tablet';
 
 export const TrafficByDevice = (props) => {
   const theme = useTheme();
-
+    console.log(props.hey)
   const data = {
     datasets: [
       {

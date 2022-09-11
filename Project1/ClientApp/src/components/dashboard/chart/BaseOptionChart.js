@@ -171,7 +171,9 @@ export default function BaseOptionChart() {
         colors: theme.palette.text.primary
       }
     },
-
+      yaxis: {
+          max: 100
+      },
     // plotOptions
     plotOptions: {
       // Bar

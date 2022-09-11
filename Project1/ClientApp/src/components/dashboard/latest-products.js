@@ -74,7 +74,7 @@ export const LatestProducts = (props) => (
     />
     <Divider />
     <List>
-      {products.map((product, i) => (
+      {props.products.map((product, i) => (
         <ListItem
           divider={i < products.length - 1}
           key={product.id}
